@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+html {
+    background-color: lightgray;
+}
+body {
+
+}
+#root {
+    display: flex;
+    /*grid-template-columns: 100%;
+    grid-template-rows: 100%;*/
+    height: 100%;
+    width: 860px;
+    margin: 0 auto;
+    background-color: aliceblue;
+}
+.table-wrapper {
+    position: relative;
+    width: 800px;
+    height: 100vh;
+    margin: 0 auto;
+
+}
+.table-filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.table-titles,
+.table-body-items
+{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: end;
+    border-bottom: 1px solid lightgray;
+}
+.table-body-item {
+    height: 30px;
+    border-bottom: 1px solid lightgray;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.table-pagination {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.table-pagination-items {
+    display: flex;
+    flex-direction: row;
+}
+.table-pagination-item {
+    width: 20px;
+    height: 20px;
+    margin: 4px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.table-pagination-item.active {
+    background-color: black;
+    color: aliceblue;
+}
+.table-pagination hr {
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.error-boundary {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error-boundary-item {
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 80px 40px;
+    border-radius: 20px;
+    border: 2px solid orangered;
 }
